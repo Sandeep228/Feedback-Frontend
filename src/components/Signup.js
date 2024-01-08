@@ -51,7 +51,6 @@ const Signup = () => {
       return;
     }
 
-    // Disable the signup button to prevent multiple clicks
     setSubmitting(true);
 
     if (!signupData.name && !signupData.email && !signupData.password && !signupData.role) {
@@ -155,28 +154,30 @@ const Signup = () => {
      
     }
     finally {
-      // Reset the submitting state to false
       setSubmitting(false);
     }
      };
 
   return (  
+    <Box style={{height:"100vh"}}>
     <Box
       width="100%"
-      height="100vh"
       display="flex"
+      minHeight="100%"  
       alignItems="center"
       justifyContent="center"
+      padding={4}
       background="linear-gradient(to right, #4a148c, #880e4f)"
-     
     >
       <VStack
-        spacing={8}
-        align="stretch"
+       spacing={8}
+       align="stretch"
         p={8}
         boxShadow="lg"
         borderRadius="md"
         bg="white"
+        height="100%"
+        overflow="hidden"
         width={{ base: '90%', md: '70%', lg: '30%' }}
       >
         <Heading as="h2" size="xl" mb={4} color="purple.700">
@@ -248,7 +249,8 @@ const Signup = () => {
       </VStack>
    
     </Box>
-  );
+    </Box>
+  )
 };
 
 export default Signup
